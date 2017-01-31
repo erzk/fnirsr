@@ -11,7 +11,7 @@ vignette: >
 
 This vignette will show how to load raw csv files produced by Hitachi ETG-4000 fNIRS. The rationale for writing this package was to allow conducting fNIRS data analysis in R.
 
-## Loading a file
+## Loading a file (ETG-4000)
 
 In its current development stage this package can only read raw csv files produced by Hitachi ETG-4000. Other systems produce file with a different structure and so far I did not need to use them. Eventually, I might expand this package to work with other file types.
 
@@ -39,7 +39,7 @@ str(df)
 ```
 
 
-## Plotting a file
+## Plotting a file (ETG-4000)
 
 Once the csv file is loaded and a data frame is created, you can start plotting the signal.
 
@@ -67,3 +67,34 @@ plot_ETG4000(df, type = "separate", channel = 1)
 ```
 
 Next releases will include filtering, splitting, and averaging the continuous recordings.
+
+## Loading a file (.nirs)
+
+While working with fNIRS data you might come across other file formats. One of the most popular formats is *.nirs* which is used by [HOMER2](http://homer-fnirs.org/). This package's main goal is to help in analysing ETG-4000 data but I happened to write simple .nirs functions.
+
+To load .nirs data use the following code:
+
+```{r}
+file_path_nirs <- system.file("extdata", "Simple_Probe.nirs", package = "fnirsr")
+nirs_file <- load_nirs_data(file_path_nirs)
+```
+
+This will load a list with data and additional information. You can explore it in the following way:
+
+```{r}
+str(nirs_file)
+```
+
+The most interesting elements are `t` (time) and `d` (data):
+
+```{r}
+# matrix dimensions
+dim(nirs_file$d)
+
+# have a look at the data
+head(nirs_file$d)
+```
+
+```{r, fig.width=10, fig.height=8}
+plot_nirs(nirs_file)
+```

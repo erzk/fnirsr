@@ -10,7 +10,7 @@
 #' load_ETG4000_data(file_path)
 #'
 load_ETG4000_data <- function(x) {
-  if (tools::file_ext(x) != "csv")
+  if (file_ext(x) != "csv")
     stop("ETG4000 files should have a csv extension.")
   dat <- read.csv(x, skip = 40) # TODO check if the number of rows vary
   # TODO read the sampling period from the header

@@ -10,7 +10,7 @@
 #' load_ETG4000_header(file_path)
 #'
 load_ETG4000_header <- function(fileName){
-  if (tools::file_ext(fileName) != "csv")
+  if (file_ext(fileName) != "csv")
     stop("ETG-4000 files should have a csv extension.")
   else {
     hdr <- list()

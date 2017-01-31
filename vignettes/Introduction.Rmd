@@ -95,6 +95,10 @@ dim(nirs_file$d)
 head(nirs_file$d)
 ```
 
+## Plotting a file (.nirs)
+
+Signals can be visualised in faceted time series plots. Red lines symbolise the events (triggers).
+
 ```{r, fig.width=10, fig.height=8}
 plot_nirs(nirs_file)
 ```

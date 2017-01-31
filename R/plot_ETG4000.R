@@ -1,6 +1,6 @@
 #' Plot the raw signal
 #'
-#' @param x A data frame with a csv raw ETG-4000 data
+#' @param x A data frame with an ETG-4000 data.
 #' @param type A string. Specifies the type of plot. Options: "facets", "overlap", "separate". Defaults to "facets".
 #' @param channel An integer. Represents the channel number.
 #'
@@ -15,10 +15,11 @@
 #' plot_ETG4000(rawData, type = "separate", channel = 1)
 #'
 plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
-  # add the event line
-event_lines <- x %>% dplyr::filter(Mark > 0) %>% .[[1]]
+  if (!is.data.frame(x))
+    stop("Please provide a data frame with ETG-4000 data.")
 
-  library(zoo)
+  event_lines <- x %>% dplyr::filter(Mark > 0) %>% .[[1]]
+
   x_zoo <- zoo(x[, 2:(ncol(x) - 5)])
 
   if (type == "facets") {

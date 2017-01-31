@@ -7,7 +7,7 @@
 plot_ETG4000(x, type = "facets", channel = NULL)
 }
 \arguments{
-\item{x}{A data frame with a csv raw ETG-4000 data}
+\item{x}{A data frame with an ETG-4000 data.}
 
 \item{type}{A string. Specifies the type of plot. Options: "facets", "overlap", "separate". Defaults to "facets".}
 

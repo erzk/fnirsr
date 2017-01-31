@@ -16,12 +16,14 @@ Depends:
     R.matlab (>= 3.6.1),
     readr (>= 1.0.0),
     signal (>= 0.7-6),
+    tools,
     zoo (>= 1.7-14)
 Imports:
     dplyr (>= 0.5.0),
     R.matlab (>= 3.6.1),
     readr (>= 1.0.0),
     signal (>= 0.7-6),
+    tools,
     zoo (>= 1.7-14)
 RoxygenNote: 5.0.1
 Suggests: knitr,

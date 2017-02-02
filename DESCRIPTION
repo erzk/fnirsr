@@ -2,31 +2,21 @@ Package: fnirsr
 Type: Package
 Title: Package for analysing funtional near-infrared spectroscopy (fNIRS) data
 Version: 0.1.0
-Author: Eryk Walczak
-Maintainer: Eryk Walczak <eryk.j.walczak@gmail.com>
+Authors@R: person("Eryk", "Walczak", email = "eryk.j.walczak@gmail.com",
+  role = c("aut", "cre"))
 Description: Load, slice, filter, plot, and transform fNIRS data.
     The majority of functions were developed to work with Hitachi ETG-4000 data.
 License: GPL-3
-URL: https://walczak.org, https://github.com/erzk/fnirsr
+URL: https://github.com/erzk/fnirsr
+BugReports: https://github.com/erzk/fnirsr/issues
 Encoding: UTF-8
 LazyData: true
 Depends:
     R (>= 3.1),
-    dplyr (>= 0.5.0),
-    R.matlab (>= 3.6.1),
-    readr (>= 1.0.0),
-    signal (>= 0.7-6),
+    dplyr,
+    R.matlab,
+    readr,
+    signal,
     tools,
-    zoo (>= 1.7-14)
-Imports:
-    dplyr (>= 0.5.0),
-    R.matlab (>= 3.6.1),
-    readr (>= 1.0.0),
-    signal (>= 0.7-6),
-    tools,
-    zoo (>= 1.7-14)
+    zoo
 RoxygenNote: 5.0.1
-Suggests: knitr,
-    rmarkdown,
-    testthat
-VignetteBuilder: knitr

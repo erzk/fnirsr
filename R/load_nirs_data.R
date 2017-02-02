@@ -3,11 +3,10 @@
 #' @param x A nirs file.
 #'
 #' @return A list.
+#' @export
 #'
 #' @examples
 #' load_nirs_data("Simple_Probe.nirs")
-#'
-#' @export
 #'
 load_nirs_data <- function(x) {
   if (file_ext(x) != "nirs")

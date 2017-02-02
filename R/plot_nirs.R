@@ -3,13 +3,12 @@
 #' @param x A list.
 #'
 #' @return A plot.
+#' @export
 #'
 #' @examples
 #' data <- load_nirs_data("Simple_Probe.nirs")
 #' plot_nirs(data)
 #' plot_nirs(data, type = "facets")
-#'
-#' @export
 #'
 plot_nirs <- function(x, type = "facets") {
   if (!is.list(x))
@@ -17,7 +16,7 @@ plot_nirs <- function(x, type = "facets") {
   x_zoo <- zoo(x$d)
   event_lines <- which(x$s != 0)
 
-  if(type == "facets"){
+  if (type == "facets") {
     my.panel <- function(y, ...) {
       lines(y, ...)
       abline(v = event_lines, col = "red")

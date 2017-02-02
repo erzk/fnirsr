@@ -13,12 +13,14 @@
 #' plot_ETG4000(rawData)
 #' plot_ETG4000(rawData, type = "overlap")
 #' plot_ETG4000(rawData, type = "separate", channel = 1)
+#' plot_ETG4000(rawData, type = "average")
 #'
 plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
   if (!is.data.frame(x))
     stop("Please provide a data frame with ETG-4000 data.")
 
   event_lines <- x %>% dplyr::filter(Mark > 0) %>% .[[1]]
+  event_lines_time <- x %>% dplyr::filter(Mark > 0) %>% .$"Time"
 
   x_zoo <- zoo(x[, 2:(ncol(x) - 5)])
 
@@ -39,11 +41,20 @@ plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
     if (missing(channel)) {
       stop("Channel number to plot is missing.")
     } else {
-      event_lines_time <- x %>% dplyr::filter(Mark > 0) %>% .$"Time"
       channel = paste0("CH", channel)
       plot(x$Time, x[[channel]], type = "l",
            xlab = "Time (s)", ylab = "Intensity",
            main = paste0("Channel ", channel))
+      abline(v = event_lines_time, col = "red")
+    }
+  }
+  if (type == "average") {
+    if (!("GrandAverage" %in% names(x))) {
+      stop("'GrandAverage' column is missing. Create this column using 'grand_average_ETG4000()'.")
+    } else {
+      plot(x$Time, x$GrandAverage, type = "l",
+           xlab = "Time (s)", ylab = "Intensity",
+           main = "Grand Average")
       abline(v = event_lines_time, col = "red")
     }
   }

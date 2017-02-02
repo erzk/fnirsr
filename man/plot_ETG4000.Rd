@@ -25,6 +25,7 @@ rawData <- load_ETG4000_data(file_path)
 plot_ETG4000(rawData)
 plot_ETG4000(rawData, type = "overlap")
 plot_ETG4000(rawData, type = "separate", channel = 1)
+plot_ETG4000(rawData, type = "average")
 
 }
 

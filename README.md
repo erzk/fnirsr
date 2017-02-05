@@ -1,5 +1,5 @@
 # fnirsr
-**An R Package for analysing funtional near-infrared spectroscopy (fNIRS) data**
+**An R Package for analysing functional near-infrared spectroscopy (fNIRS) data**
 
 * Install *devtools* if you don't have it yet: `install.packages("devtools")`
 * Use `devtools::install_github("erzk/fnirsr")` to install the package.

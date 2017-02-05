@@ -1,7 +1,8 @@
 #' Plot the raw signal
 #'
 #' @param x A data frame with an ETG-4000 data.
-#' @param type A string. Specifies the type of plot. Options: "facets", "overlap", "separate". Defaults to "facets".
+#' @param type A string. Specifies the type of plot.
+#' Options: "facets", "overlap", "separate", "average". Defaults to "facets".
 #' @param channel An integer. Represents the channel number.
 #'
 #' @return A plot.
@@ -36,6 +37,7 @@ plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
   if (type == "overlap") {
     plot(x_zoo, screens = 1, col = 1:ncol(x_zoo),
          xlab = "Samples", ylab = "Intensity", main = "All channels")
+    # TODO add abline
   }
   if (type == "separate") {
     if (missing(channel)) {

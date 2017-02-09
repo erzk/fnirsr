@@ -43,10 +43,11 @@ str(df)
 
 Once the csv file is loaded and a data frame is created, you can start plotting the signal.
 
-Plotting function `plot_ETG4000()` comes with three arguments:
+Plotting function `plot_ETG4000()` comes with four arguments:
 * `facets`
 * `overlap`
 * `channel`
+* `average`
 
 The default choice is `facets` which will show all channels in separate facets. This should enable spotting outliers.
 
@@ -66,7 +67,22 @@ Alternatively, if you want to plot a single channel of interest then use the `se
 plot_ETG4000(df, type = "separate", channel = 1)
 ```
 
-Next releases will include filtering, splitting, and averaging the continuous recordings.
+In order to create a plot showing averaged signal, it is necessary to first create a column with the averaged signal:
+
+```{r}
+df <- grand_average_ETG4000(df)
+
+names(df)
+```
+
+Once `GrandAverage` column is created, the plot for averaged channels can be created:
+
+```{r}
+plot_ETG4000(df, type = "average")
+```
+
+
+Next releases will include filtering, splitting, and transforming the continuous recordings.
 
 ## Loading a file (.nirs)
 

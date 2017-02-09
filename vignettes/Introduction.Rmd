@@ -39,7 +39,7 @@ str(df)
 ```
 
 
-## Plotting a file (ETG-4000)
+## Plotting a signal (ETG-4000)
 
 Once the csv file is loaded and a data frame is created, you can start plotting the signal.
 
@@ -122,7 +122,7 @@ dim(nirs_file$d)
 head(nirs_file$d)
 ```
 
-## Plotting a file (.nirs)
+## Plotting a signal (.nirs)
 
 Signals can be visualised in faceted time series plots. Red lines symbolise the events (triggers).
 

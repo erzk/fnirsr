@@ -81,8 +81,19 @@ Once `GrandAverage` column is created, the plot for averaged channels can be cre
 plot_ETG4000(df, type = "average")
 ```
 
+## Cleaning a signal (ETG-4000)
 
-Next releases will include filtering, splitting, and transforming the continuous recordings.
+If a channel (or several channels) is corrupt and cannot be cleaned then the simplest way to obtain clean grand average is to remove the noisy channel.
+
+The faceted plots above show that channel 15 and 20 look noisy. To remove these channels from the signal data frame use the following:
+
+```{r}
+df <- remove_channels_ETG4000(df, channel = c(15, 20))
+
+names(df)
+```
+
+
 
 ## Loading a file (.nirs)
 
@@ -118,3 +129,5 @@ Signals can be visualised in faceted time series plots. Red lines symbolise the 
 ```{r, fig.width=10, fig.height=8}
 plot_nirs(nirs_file)
 ```
+
+**Next releases will include filtering, splitting, and transforming the continuous recordings.**

@@ -7,8 +7,8 @@
 #' @export
 #'
 #' @examples
-#' grand_average_ETG4000(df, channel = 15)
-#' grand_average_ETG4000(df, channel = c(15, 20))
+#' remove_channels_ETG4000(df, channel = 15)
+#' remove_channels_ETG4000(df, channel = c(15, 20))
 #'
 remove_channels_ETG4000 <- function(x, channel = NULL){
   if (!is.data.frame(x))

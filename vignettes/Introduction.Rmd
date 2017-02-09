@@ -51,19 +51,19 @@ Plotting function `plot_ETG4000()` comes with four arguments:
 
 The default choice is `facets` which will show all channels in separate facets. This should enable spotting outliers.
 
-```{r, fig.width=10, fig.height=8}
+```{r, fig.width=7, fig.height=8}
 plot_ETG4000(df)
 ```
 
 Another option is plotting all channels overlapping each other:
 
-```{r, fig.width=10, fig.height=8}
+```{r, fig.width=7, fig.height=7}
 plot_ETG4000(df, type = "overlap")
 ```
 
 Alternatively, if you want to plot a single channel of interest then use the `separate` argument and a channel number. This option uses time column as an x-axis (as opposed to the previous plots using samples).
 
-```{r, fig.width=8, fig.height=6}
+```{r, fig.width=7, fig.height=6}
 plot_ETG4000(df, type = "separate", channel = 1)
 ```
 
@@ -77,7 +77,7 @@ names(df)
 
 Once `GrandAverage` column is created, the plot for averaged channels can be created:
 
-```{r}
+```{r, fig.width=7, fig.height=6}
 plot_ETG4000(df, type = "average")
 ```
 
@@ -126,8 +126,8 @@ head(nirs_file$d)
 
 Signals can be visualised in faceted time series plots. Red lines symbolise the events (triggers).
 
-```{r, fig.width=10, fig.height=8}
+```{r, fig.width=7, fig.height=8}
 plot_nirs(nirs_file)
 ```
 
-**Next releases will include filtering, splitting, and transforming the continuous recordings.**
+*Next releases will include filtering, splitting, and transforming the continuous recordings.*

@@ -18,8 +18,8 @@ A data frame with ETG-4000 data.
 Remove channels from the ETG-4000 data
 }
 \examples{
-grand_average_ETG4000(df, channel = 15)
-grand_average_ETG4000(df, channel = c(15, 20))
+remove_channels_ETG4000(df, channel = 15)
+remove_channels_ETG4000(df, channel = c(15, 20))
 
 }
 

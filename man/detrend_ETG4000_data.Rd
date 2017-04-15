@@ -4,10 +4,14 @@
 \alias{detrend_ETG4000_data}
 \title{Detrend the ETG-4000 data.}
 \usage{
-detrend_ETG4000_data(x)
+detrend_ETG4000_data(x, type = "all", channel = NULL)
 }
 \arguments{
-\item{x}{Raw csv file.}
+\item{x}{A data frame with an ETG-4000 data.}
+
+\item{type}{A string. Specifies the type of plot. Allowed: "all" or "single".}
+
+\item{channel}{A numeric or string. If type is "single" then it has to be specified.}
 }
 \value{
 A data frame.
@@ -17,13 +21,17 @@ Removes a linear trend.
 }
 \examples{
 file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
+
 fnirs_signal <- load_ETG4000_data(file_path)
 plot_ETG4000(fnirs_signal)
-fnirs_det <- detrend_ETG4000_data(fnirs_signal)
+fnirs_det <- detrend_ETG4000_data(fnirs_signal) # detrend all channels
 plot_ETG4000(fnirs_det)
 
-plot_ETG4000(fnirs_signal, "separate", 18)
+plot_ETG4000(fnirs_signal, "separate", 18) # zoom on one channel to notice detrending
 plot_ETG4000(fnirs_det, "separate", 18)
+
+fnirs_det_24 <- detrend_ETG4000_data(fnirs_signal, "single", 24) # detrend only one channel
+plot_ETG4000(fnirs_det_24, "separate", 24)
 
 }
 

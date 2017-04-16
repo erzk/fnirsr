@@ -13,8 +13,7 @@ BugReports: https://github.com/erzk/fnirsr/issues
 Encoding: UTF-8
 LazyData: TRUE
 Depends:
-    R (>= 3.1)
-Imports:
+    R (>= 3.1),
     dplyr,
     R.matlab,
     readr,

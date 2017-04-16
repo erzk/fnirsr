@@ -13,13 +13,18 @@ BugReports: https://github.com/erzk/fnirsr/issues
 Encoding: UTF-8
 LazyData: TRUE
 Depends:
-    R (>= 3.1),
-    dplyr,
-    R.matlab,
-    readr,
-    RSEIS,
-    signal,
-    tools,
-    zoo
+    R (>= 3.1)
+Imports:
+    dplyr (>= 0.5.0),
+    graphics (>= 3.3.2),
+    R.matlab (>= 3.6.1),
+    readr (>= 1.0.0),
+    RSEIS (>= 3.7-4),
+    tools (>= 3.3.2),
+    utils (>= 3.3.2),
+    zoo (>= 1.7-14)
+Suggests: knitr,
+    rmarkdown,
+    testthat
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr

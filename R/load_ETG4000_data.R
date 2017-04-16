@@ -24,6 +24,8 @@ load_ETG4000_data <- function(x, header_ETG4000) {
   sampling_element <- which(grepl("Sampling Period", header_ETG4000))
   sampling_element <- header_ETG4000[[sampling_element]]
   sampling_period <- as.numeric(sub(".*,", "", sampling_element))
-  dat$Time <- seq(from = 0, to = (nrow(dat) * sampling_period) - sampling_period, by = sampling_period)
+  dat$Time <- seq(from = 0,
+                  to = (nrow(dat) * sampling_period) - sampling_period,
+                  by = sampling_period)
   return(dat)
 }

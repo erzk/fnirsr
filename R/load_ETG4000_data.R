@@ -1,5 +1,8 @@
 #' Load the ETG-4000 data
 #'
+#' @importFrom tools file_ext
+#' @importFrom utils read.csv
+#'
 #' @param x Raw csv file.
 #' @param header_ETG4000 A list representing an ETG-4000 header.
 #'

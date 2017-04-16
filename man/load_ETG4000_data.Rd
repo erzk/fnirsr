@@ -4,10 +4,12 @@
 \alias{load_ETG4000_data}
 \title{Load the ETG-4000 data}
 \usage{
-load_ETG4000_data(x)
+load_ETG4000_data(x, header_ETG4000)
 }
 \arguments{
 \item{x}{Raw csv file.}
+
+\item{header_ETG4000}{A list representing an ETG-4000 header.}
 }
 \value{
 A data frame.
@@ -17,7 +19,8 @@ Load the ETG-4000 data
 }
 \examples{
 file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
-load_ETG4000_data(file_path)
+ETG_header <- load_ETG4000_header(file_path)
+load_ETG4000_data(file_path, ETG_header)
 
 }
 

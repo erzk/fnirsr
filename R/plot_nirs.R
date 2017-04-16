@@ -1,12 +1,17 @@
 #' Plot the data extracted from a nirs file
 #'
+#' @import zoo
+#'
 #' @param x A list.
+#' @param type A string. Defaults to "facets".
 #'
 #' @return A plot.
 #' @export
 #'
 #' @examples
-#' data <- load_nirs_data("Simple_Probe.nirs")
+#' file_path <- system.file("extdata", "Simple_Probe.nirs", package = "fnirsr")
+#' data <- load_nirs_data(file_path)
+#'
 #' plot_nirs(data)
 #' plot_nirs(data, type = "facets")
 #'

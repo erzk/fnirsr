@@ -1,5 +1,11 @@
 #' Plot the raw signal
 #'
+#' @import dplyr
+#' @import zoo
+#' @importFrom graphics abline
+#' @importFrom graphics lines
+#' @importFrom graphics plot
+#'
 #' @param x A data frame with an ETG-4000 data.
 #' @param type A string. Specifies the type of plot.
 #' Options: "facets", "overlap", "separate", "average". Defaults to "facets".
@@ -10,11 +16,15 @@
 #'
 #' @examples
 #' file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
-#' rawData <- load_ETG4000_data(file_path)
+#' ETG_header <- load_ETG4000_header(file_path)
+#' rawData <- load_ETG4000_data(file_path, ETG_header)
+#'
 #' plot_ETG4000(rawData)
 #' plot_ETG4000(rawData, type = "overlap")
 #' plot_ETG4000(rawData, type = "separate", channel = 1)
-#' plot_ETG4000(rawData, type = "average")
+#'
+#' averagedData <- grand_average_ETG4000(rawData)
+#' plot_ETG4000(averagedData, type = "average")
 #'
 plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
   if (!is.data.frame(x))

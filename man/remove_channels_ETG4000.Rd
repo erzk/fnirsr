@@ -18,8 +18,12 @@ A data frame with ETG-4000 data.
 Remove channels from the ETG-4000 data
 }
 \examples{
+file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
+ETG_header <- load_ETG4000_header(file_path)
+df <- load_ETG4000_data(file_path, ETG_header)
+
 remove_channels_ETG4000(df, channel = 15)
-remove_channels_ETG4000(df, channel = c(15, 20))
+remove_channels_ETG4000(df, channel = c(16, 20))
 
 }
 

@@ -22,11 +22,15 @@ Plot the raw signal
 }
 \examples{
 file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
-rawData <- load_ETG4000_data(file_path)
+ETG_header <- load_ETG4000_header(file_path)
+rawData <- load_ETG4000_data(file_path, ETG_header)
+
 plot_ETG4000(rawData)
 plot_ETG4000(rawData, type = "overlap")
 plot_ETG4000(rawData, type = "separate", channel = 1)
-plot_ETG4000(rawData, type = "average")
+
+averagedData <- grand_average_ETG4000(rawData)
+plot_ETG4000(averagedData, type = "average")
 
 }
 

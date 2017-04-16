@@ -16,7 +16,8 @@ A .nirs file.
 Load the data from a nirs file
 }
 \examples{
-hitachi_to_nirs("....csv")
+file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
+hitachi_to_nirs(file_path)
 
 }
 \references{

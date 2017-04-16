@@ -8,6 +8,8 @@ plot_nirs(x, type = "facets")
 }
 \arguments{
 \item{x}{A list.}
+
+\item{type}{A string. Defaults to "facets".}
 }
 \value{
 A plot.
@@ -16,7 +18,9 @@ A plot.
 Plot the data extracted from a nirs file
 }
 \examples{
-data <- load_nirs_data("Simple_Probe.nirs")
+file_path <- system.file("extdata", "Simple_Probe.nirs", package = "fnirsr")
+data <- load_nirs_data(file_path)
+
 plot_nirs(data)
 plot_nirs(data, type = "facets")
 

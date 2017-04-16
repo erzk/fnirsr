@@ -16,7 +16,11 @@ A data frame with ETG-4000 data plus an extra column including Grand Average
 Create a grand average of the ETG-4000 data
 }
 \examples{
-grand_average_ETG4000(df)
+file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
+ETG_header <- load_ETG4000_header(file_path)
+
+fnirs_signal <- load_ETG4000_data(file_path, ETG_header)
+grand_average_ETG4000(fnirs_signal)
 
 }
 

@@ -4,7 +4,7 @@
 \alias{load_ETG4000_header}
 \title{Load the ETG-4000 data}
 \usage{
-load_ETG4000_header(fileName)
+load_ETG4000_header(x)
 }
 \arguments{
 \item{x}{Raw csv file.}

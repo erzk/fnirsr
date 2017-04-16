@@ -16,7 +16,8 @@ A list.
 Load the data from a nirs file
 }
 \examples{
-load_nirs_data("Simple_Probe.nirs")
+file_path <- system.file("extdata", "Simple_Probe.nirs", package = "fnirsr")
+load_nirs_data(file_path)
 
 }
 

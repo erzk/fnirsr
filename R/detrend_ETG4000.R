@@ -2,6 +2,9 @@
 #'
 #' Removes a linear trend.
 #'
+#' @import dplyr
+#' @importFrom RSEIS detrend
+#'
 #' @param x A data frame with an ETG-4000 data.
 #' @param type A string. Specifies the type of plot. Allowed: "all" or "single".
 #' @param channel A numeric or string. If type is "single" then it has to be specified.
@@ -11,8 +14,9 @@
 #'
 #' @examples
 #' file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
+#' ETG_header <- load_ETG4000_header(file_path)
 #'
-#' fnirs_signal <- load_ETG4000_data(file_path)
+#' fnirs_signal <- load_ETG4000_data(file_path, ETG_header)
 #' plot_ETG4000(fnirs_signal)
 #' fnirs_det <- detrend_ETG4000_data(fnirs_signal) # detrend all channels
 #' plot_ETG4000(fnirs_det)

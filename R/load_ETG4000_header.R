@@ -22,8 +22,8 @@ load_ETG4000_header <- function(fileName){
       line <- line + 1L
       input <- read_lines(fileName, skip = line - 1L, n_max = 1L)
     }
-    a_hdr <- read_lines(fileName, skip = 1L, n_max = line - 1L) # loads a vector # ? line - 2L?
-    # TODO split the vector into cleaner data frame
+    a_hdr <- read_lines(fileName, skip = 1L, n_max = line - 1L)
+    a_hdr <- as.list(a_hdr)
     return(a_hdr)
   }
 }

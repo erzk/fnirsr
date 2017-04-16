@@ -33,7 +33,7 @@ head(header)
 Loading the signal from csv files can be accomplished using the basic `load_ETG4000_data()` function. It reads the data section of a csv file, changes the `Time` column to reflect time period from the beginning of the recording (instead of actual hour), and returns a data frame.
 
 ```{r}
-df <- load_ETG4000_data(file_path)
+df <- load_ETG4000_data(file_path, header)
 
 str(df)
 ```
@@ -93,6 +93,38 @@ df <- remove_channels_ETG4000(df, channel = c(15, 20))
 names(df)
 ```
 
+## Detrending a signal (ETG-4000)
+
+fNIRS signal is likely to show a linear trend which can be removed.
+
+Grand Average in the plot above is showing a linear downward trend. The linear trend can be removed from all channels (recommended) or from a single channel.
+
+```{r, fig.width=7, fig.height=8}
+fnirs_detrended <- detrend_ETG4000_data(df) # detrend all channels
+plot_ETG4000(fnirs_detrended)
+```
+
+I suggest detrending the signal before creating a Grand Average. This way the `grand_average_ETG4000()` function will create a *Grand Average* column with detrended signal.
+
+The effect of detrending is easier to observe when zooming on a particular channel. Compare the plots underneath to see how removing the linear trend is changing the signal:
+
+```{r}
+plot_ETG4000(df, "separate", 18) # zoom on one channel to notice detrending
+
+plot_ETG4000(fnirs_detrended, "separate", 18)
+```
+
+It is also possible to detrend the signal of only one channel:
+
+```{r}
+# plot of the original channel before detrending
+plot_ETG4000(df, "separate", 24)
+
+# detrend only one channel - 24
+fnirs_det_24 <- detrend_ETG4000_data(df, "single", 24)
+# plot of the same channel after detrending
+plot_ETG4000(fnirs_det_24, "separate", 24)
+```
 
 
 ## Loading a file (.nirs)

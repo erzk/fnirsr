@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![Travis-CI Build Status](https://travis-ci.org/erzk/fnirsr.svg?branch=master)](https://travis-ci.org/erzk/fnirsr)
+
 # fnirsr
 **An R Package for analysing functional near-infrared spectroscopy (fNIRS) data**
 

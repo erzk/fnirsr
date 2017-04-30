@@ -10,6 +10,7 @@ test_that("Detrending works correctly", {
 
   expect_that(detrend_ETG4000_data(), throws_error())
   expect_that(detrend_ETG4000_data(df, "single"), throws_error())
+  expect_that(detrend_ETG4000_data(df, "some", 24), throws_error())
   expect_that(fnirs_detrended, is_a("data.frame"))
   expect_equal(dim(fnirs_detrended), dim(df))
 })

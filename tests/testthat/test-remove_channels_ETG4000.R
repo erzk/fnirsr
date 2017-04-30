@@ -9,6 +9,7 @@ test_that("Removing channels works correctly", {
   df_rm1 <- remove_channels_ETG4000(df, 14)
   df_rm2 <- remove_channels_ETG4000(df, channel = c(15, 20))
 
+  expect_that(remove_channels_ETG4000(), throws_error())
   expect_that(remove_channels_ETG4000(df), throws_error())
   expect_that(df_rm1, is_a("data.frame"))
   expect_that(df_rm2, is_a("data.frame"))

@@ -1,6 +1,6 @@
 context("Detrending the ETG-4000 data")
 
-test_that("Removing channels works correctly", {
+test_that("Detrending works correctly", {
   file_path <- file.path(
     system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv",
                 package = "fnirsr"))

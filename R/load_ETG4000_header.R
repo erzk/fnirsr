@@ -19,13 +19,13 @@ load_ETG4000_header <- function(x){
     hdr <- list()
     class(hdr) <- "fnirsHeader"
     hdr$x <- basename(x)
-    line <- 0L # find the last line that doesn't start with `Data` or is blank
+    last_line <- 0L # find the last line that doesn't start with `Data` or is blank
     input <- "start"
     while (!grepl("Data", input) & input != "") {
-      line <- line + 1L
-      input <- read_lines(x, skip = line - 1L, n_max = 1L)
+      last_line <- last_line + 1L
+      input <- read_lines(x, skip = last_line - 1L, n_max = 1L)
     }
-    a_hdr <- read_lines(x, skip = 1L, n_max = line - 1L)
+    a_hdr <- read_lines(x, skip = 1L, n_max = last_line - 1L)
     a_hdr <- as.list(a_hdr)
     return(a_hdr)
   }

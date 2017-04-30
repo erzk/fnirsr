@@ -20,6 +20,7 @@ Imports:
     R.matlab (>= 3.6.1),
     readr (>= 1.0.0),
     RSEIS (>= 3.7-4),
+    stringr (>= 1.1.0),
     tools (>= 3.3.2),
     utils (>= 3.3.2),
     zoo (>= 1.7-14)

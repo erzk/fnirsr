@@ -29,6 +29,9 @@
 plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
   if (!is.data.frame(x))
     stop("Please provide a data frame with ETG-4000 data.")
+  if (!(type %in% c("facets", "overlap", "separate", "average"))) {
+    stop("Type of plot incorrect. Allowed: 'facets', 'overlap', 'separate', or 'average'.")
+  }
 
   event_lines <- x %>% dplyr::filter(Mark > 0) %>% .[[1]]
   event_lines_time <- x %>% dplyr::filter(Mark > 0) %>% .$"Time"

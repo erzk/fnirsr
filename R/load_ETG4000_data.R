@@ -26,7 +26,7 @@ load_ETG4000_data <- function(x, header_ETG4000) {
   last_line <- 0L
   while (!grepl("Data", input)) {
     last_line <- last_line + 1L
-    input <- read_lines(file_path, skip = last_line - 1L, n_max = 1L)
+    input <- read_lines(x, skip = last_line - 1L, n_max = 1L)
   }
 
   dat <- read.csv(x, skip = last_line)

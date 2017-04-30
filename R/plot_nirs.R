@@ -16,7 +16,7 @@
 #' plot_nirs(data, type = "facets")
 #'
 plot_nirs <- function(x, type = "facets") {
-  if (!is.list(x))
+  if (!is.list(x) || is.data.frame(x))
     stop("Please provide a list created from a nirs file.")
   x_zoo <- zoo(x$d)
   event_lines <- which(x$s != 0)

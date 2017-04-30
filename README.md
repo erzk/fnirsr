@@ -98,7 +98,15 @@ Plotting a signal (ETG-4000)
 
 Once the csv file is loaded and a data frame is created, you can start plotting the signal.
 
-Plotting function `plot_ETG4000()` comes with four arguments: \* `facets` \* `overlap` \* `channel` \* `average`
+Plotting function `plot_ETG4000()` comes with four arguments:
+
+-   `facets`
+
+-   `overlap`
+
+-   `channel`
+
+-   `average`
 
 The default choice is `facets` which will show all channels in separate facets. This should enable spotting outliers.
 

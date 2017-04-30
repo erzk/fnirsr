@@ -20,7 +20,7 @@ load_ETG4000_data <- function(x, header_ETG4000) {
     stop("ETG4000 files should have a csv extension.")
   if (!is.list(header_ETG4000))
     stop("Please provide a valid ETG4000 header.")
-  dat <- read.csv(x, skip = 40) # TODO check if the number of rows vary
+  dat <- read.csv(x, skip = 40) # TODO check if the number of rows varies
   # read the sampling period from the header
   sampling_element <- which(grepl("Sampling Period", header_ETG4000))
   sampling_element <- header_ETG4000[[sampling_element]]
@@ -28,5 +28,6 @@ load_ETG4000_data <- function(x, header_ETG4000) {
   dat$Time <- seq(from = 0,
                   to = (nrow(dat) * sampling_period) - sampling_period,
                   by = sampling_period)
+  # TODO standardise the channel names, e.g. CH1 etc.
   return(dat)
 }

@@ -3,7 +3,7 @@
 fnirsr
 ======
 
-[![Travis-CI Build Status](https://travis-ci.org/erzk/fnirsr.svg?branch=master)](https://travis-ci.org/erzk/fnirsr)
+[![Travis-CI Build Status](https://travis-ci.org/erzk/fnirsr.svg?branch=master)](https://travis-ci.org/erzk/fnirsr) [![Coverage Status](https://img.shields.io/codecov/c/github/erzk/fnirsr/master.svg)](https://codecov.io/github/erzk/fnirsr?branch=master)
 
 **An R Package for analysing functional near-infrared spectroscopy (fNIRS) data**
 

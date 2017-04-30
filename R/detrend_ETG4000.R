@@ -31,7 +31,7 @@ detrend_ETG4000_data <- function(x, type = "all", channel = NULL) {
   if (!is.data.frame(x))
     stop("Please provide a data frame with ETG-4000 data.")
   if (!(type %in% c("all", "single"))) {
-    stop("Please how many channels to detrend: 'all' or 'single'.")
+    stop("Please specify how many channels to detrend: 'all' or 'single'.")
   }
   # detrend all channels
   if (type == "all") {

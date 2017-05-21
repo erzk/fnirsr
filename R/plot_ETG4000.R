@@ -50,7 +50,7 @@ plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
   if (type == "overlap") {
     plot(x_zoo, screens = 1, col = 1:ncol(x_zoo),
          xlab = "Samples", ylab = "Intensity", main = "All channels")
-    # TODO add abline
+    abline(v = event_lines, col = "red")
   }
   if (type == "separate") {
     if (missing(channel)) {

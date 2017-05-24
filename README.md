@@ -10,7 +10,7 @@ fnirsr
 Installation
 ------------
 
--   Install *devtools* if you don't have it yet: `install.packages("devtools")`
+-   Install *devtools* if you don’t have it yet: `install.packages("devtools")`
 -   Use `devtools::install_github("erzk/fnirsr")` to install the package.
 
 Sample data files come from [NIRS-SPM](https://www.nitrc.org/projects/nirs_spm/) and [HOMER2](http://homer-fnirs.org/).
@@ -228,7 +228,7 @@ plot_ETG4000(fnirs_det_24, "separate", 24)
 Loading a file (.nirs)
 ----------------------
 
-While working with fNIRS data you might come across other file formats. One of the most popular formats is *.nirs* which is used by [HOMER2](http://homer-fnirs.org/). This package's main goal is to help in analysing ETG-4000 data but I happened to write simple .nirs functions.
+While working with fNIRS data you might come across other file formats. One of the most popular formats is *.nirs* which is used by [HOMER2](http://homer-fnirs.org/). This package’s main goal is to help in analysing ETG-4000 data but I happened to write simple .nirs functions.
 
 To load .nirs data use the following code:
 

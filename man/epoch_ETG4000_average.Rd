@@ -12,8 +12,6 @@ epoch_ETG4000_average(x, start_epoch, end_epoch)
 \item{start_epoch}{A numeric. Number of samples before the trigger. Start of the epoch. The same as in epoch_ETG4000().}
 
 \item{end_epoch}{A numeric. Number of samples after the trigger. End of the epoch. The same as in epoch_ETG4000().}
-
-\item{trigger}{A code used to represent a trigger, e.g. 1.}
 }
 \value{
 A data frame.
@@ -29,4 +27,3 @@ df_epochs <- epoch_ETG4000(rawData, 1, -100, 100) # use to explore the epoch qua
 df_epochs_average <- epoch_ETG4000_average(df_epochs, -100, 100)
 
 }
-

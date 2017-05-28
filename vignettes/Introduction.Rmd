@@ -168,5 +168,3 @@ Signals can be visualised in faceted time series plots. Red lines symbolise the 
 ```{r facets_nirs, fig.width=7, fig.height=8}
 plot_nirs(nirs_file)
 ```
-
-*Next releases will include filtering, splitting, and transforming the continuous recordings.*

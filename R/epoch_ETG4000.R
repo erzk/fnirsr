@@ -1,7 +1,5 @@
 #' Epoch the ETG-4000 data
 #'
-#' @import dplyr
-#'
 #' @param x A data frame with an ETG-4000 data.
 #' @param trigger A code used to represent a trigger, e.g. 1.
 #' @param start_epoch A numeric. Number of samples before the trigger. Start of the epoch.

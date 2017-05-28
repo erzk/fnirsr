@@ -6,8 +6,10 @@ test_that("The epoching function works correctly", {
                 package = "fnirsr"))
   header <- load_ETG4000_header(file_path)
   rawData <- load_ETG4000_data(file_path, header)
-  df_epochs <- epoch_ETG4000(rawData, 1, 100, 100)
+  df_epochs <- epoch_ETG4000(rawData, 1, -100, 100)
+  df_epochs_pos <- epoch_ETG4000(rawData, 1, 100, 100)
 
   expect_that(df_epochs, is_a("data.frame"))
   expect_equal(dim(df_epochs), c(1206, 30))
+  expect_equal(df_epochs, df_epochs_pos)
 })

@@ -2,6 +2,7 @@
 
 export(detrend_ETG4000_data)
 export(epoch_ETG4000)
+export(epoch_ETG4000_average)
 export(grand_average_ETG4000)
 export(hitachi_to_nirs)
 export(load_ETG4000_data)

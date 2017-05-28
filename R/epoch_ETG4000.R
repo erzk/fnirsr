@@ -27,14 +27,5 @@ epoch_ETG4000 <- function(x, trigger, start_epoch, end_epoch) {
   # TODO check the space between the triggers
   rows <- lapply(trigger_indices, function(x) (x - start_epoch):(x + end_epoch))
   x <- x[unlist(rows),]
-
-  sampled_epochs <- start_epoch + end_epoch + 1
-  channels_number <- length(names(select(df, starts_with("CH")))) + 1
-  x$EpochSample <- 1:sampled_epochs
-  x %>%
-    select(starts_with("CH"), Mark, EpochSample) %>%
-    group_by(EpochSample) %>%
-    summarise_each(funs(mean), 1:channels_number) %>%
-    select(-EpochSample) %>% # TODO add Time
-    return()
+  return(x)
 }

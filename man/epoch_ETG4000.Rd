@@ -26,7 +26,7 @@ file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = 
 ETG_header <- load_ETG4000_header(file_path)
 rawData <- load_ETG4000_data(file_path, ETG_header)
 
-df_epochs <- epoch_ETG4000(rawData, 1, 100, 100)
+df_epochs <- epoch_ETG4000(rawData, 1, -100, 100)
 
 }
 

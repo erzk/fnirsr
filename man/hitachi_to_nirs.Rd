@@ -23,4 +23,3 @@ hitachi_to_nirs(file_path)
 \references{
 \url{https://www.nitrc.org/projects/hitachi2nirs/}
 }
-

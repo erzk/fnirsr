@@ -26,4 +26,3 @@ remove_channels_ETG4000(df, channel = 15)
 remove_channels_ETG4000(df, channel = c(16, 20))
 
 }
-

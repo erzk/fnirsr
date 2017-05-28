@@ -33,4 +33,3 @@ averagedData <- grand_average_ETG4000(rawData)
 plot_ETG4000(averagedData, type = "average")
 
 }
-

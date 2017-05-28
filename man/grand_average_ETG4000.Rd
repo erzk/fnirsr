@@ -23,4 +23,3 @@ fnirs_signal <- load_ETG4000_data(file_path, ETG_header)
 grand_average_ETG4000(fnirs_signal)
 
 }
-

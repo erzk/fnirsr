@@ -20,4 +20,3 @@ file_path <- system.file("extdata", "Simple_Probe.nirs", package = "fnirsr")
 load_nirs_data(file_path)
 
 }
-

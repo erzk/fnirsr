@@ -23,4 +23,3 @@ ETG_header <- load_ETG4000_header(file_path)
 load_ETG4000_data(file_path, ETG_header)
 
 }
-

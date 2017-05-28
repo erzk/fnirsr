@@ -25,4 +25,3 @@ plot_nirs(data)
 plot_nirs(data, type = "facets")
 
 }
-

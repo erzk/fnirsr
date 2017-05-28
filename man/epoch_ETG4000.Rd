@@ -29,4 +29,3 @@ rawData <- load_ETG4000_data(file_path, ETG_header)
 df_epochs <- epoch_ETG4000(rawData, 1, -100, 100)
 
 }
-

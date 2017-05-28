@@ -20,4 +20,3 @@ file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = 
 load_ETG4000_header(file_path)
 
 }
-

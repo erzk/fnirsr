@@ -35,4 +35,3 @@ fnirs_det_24 <- detrend_ETG4000_data(fnirs_signal, "single", 24) # detrend only 
 plot_ETG4000(fnirs_det_24, "separate", 24)
 
 }
-

@@ -2,7 +2,7 @@ fnirsr
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/erzk/fnirsr.svg?branch=master)](https://travis-ci.org/erzk/fnirsr) [![Coverage Status](https://img.shields.io/codecov/c/github/erzk/fnirsr/master.svg)](https://codecov.io/github/erzk/fnirsr?branch=master) [![Package-License](http://img.shields.io/badge/license-GPL--3-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fnirsr)](https://cran.r-project.org/package=fnirsr)
+[![Travis-CI Build Status](https://travis-ci.org/erzk/fnirsr.svg?branch=master)](https://travis-ci.org/erzk/fnirsr) [![Coverage Status](https://img.shields.io/codecov/c/github/erzk/fnirsr/master.svg)](https://codecov.io/github/erzk/fnirsr?branch=master) [![Package-License](http://img.shields.io/badge/license-GPL--3-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html) [![DOI](https://zenodo.org/badge/80361844.svg)](https://zenodo.org/badge/latestdoi/80361844) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fnirsr)](https://cran.r-project.org/package=fnirsr)
 
 **An R Package for analysing functional near-infrared spectroscopy (fNIRS) data**
 

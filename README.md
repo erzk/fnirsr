@@ -2,14 +2,14 @@ fnirsr
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/erzk/fnirsr.svg?branch=master)](https://travis-ci.org/erzk/fnirsr) [![Coverage Status](https://img.shields.io/codecov/c/github/erzk/fnirsr/master.svg)](https://codecov.io/github/erzk/fnirsr?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/erzk/fnirsr.svg?branch=master)](https://travis-ci.org/erzk/fnirsr) [![Coverage Status](https://img.shields.io/codecov/c/github/erzk/fnirsr/master.svg)](https://codecov.io/github/erzk/fnirsr?branch=master) [![Package-License](http://img.shields.io/badge/license-GPL--3-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fnirsr)](https://cran.r-project.org/package=fnirsr)
 
 **An R Package for analysing functional near-infrared spectroscopy (fNIRS) data**
 
 Installation
 ------------
 
--   Install *devtools* if you don’t have it yet: `install.packages("devtools")`
+-   Install *devtools* if you don't have it yet: `install.packages("devtools")`
 -   Use `devtools::install_github("erzk/fnirsr")` to install the package.
 
 Sample data files come from [NIRS-SPM](https://www.nitrc.org/projects/nirs_spm/) and [HOMER2](http://homer-fnirs.org/).
@@ -227,7 +227,7 @@ plot_ETG4000(fnirs_det_24, "separate", 24)
 Loading a file (.nirs)
 ----------------------
 
-While working with fNIRS data you might come across other file formats. One of the most popular formats is *.nirs* which is used by [HOMER2](http://homer-fnirs.org/). This package’s main goal is to help in analysing ETG-4000 data but I happened to write simple .nirs functions.
+While working with fNIRS data you might come across other file formats. One of the most popular formats is *.nirs* which is used by [HOMER2](http://homer-fnirs.org/). This package's main goal is to help in analysing ETG-4000 data but I happened to write simple .nirs functions.
 
 To load .nirs data use the following code:
 

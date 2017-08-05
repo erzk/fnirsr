@@ -7,7 +7,7 @@ Authors@R: person("Eryk", "Walczak", email = "eryk.j.walczak@gmail.com", role = 
 Description: Load, slice, filter, plot, and transform fNIRS data.
     The majority of functions were developed to work with Hitachi ETG-4000 data.
 License: GPL-3 + file LICENSE
-URL: https://erzk.github.io/fnirsr
+URL: https://github.com/erzk/fnirsr
 BugReports: https://github.com/erzk/fnirsr/issues
 Encoding: UTF-8
 LazyData: TRUE

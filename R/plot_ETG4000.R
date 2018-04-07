@@ -8,7 +8,7 @@
 #'
 #' @param x A data frame with an ETG-4000 data.
 #' @param type A string. Specifies the type of plot.
-#' Options: "facets", "overlap", "separate", "average". Defaults to "facets".
+#' Options: "facets", "epoch", "overlap", "separate", "average". Defaults to "facets".
 #' @param channel An integer. Represents the channel number.
 #'
 #' @return A plot.
@@ -29,21 +29,23 @@
 plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
   if (!is.data.frame(x))
     stop("Please provide a data frame with ETG-4000 data.")
-  if (!(type %in% c("facets", "overlap", "separate", "average"))) {
-    stop("Type of plot incorrect. Allowed: 'facets', 'overlap', 'separate', or 'average'.")
+  if (!(type %in% c("facets", "epochs_averaged",
+                    "overlap", "separate", "average"))) {
+    stop("Type of plot incorrect. Allowed arguments: 'facets', 'epochs_averaged', 'overlap', 'separate', or 'average'.")
   }
 
   event_lines <- x %>% dplyr::filter(Mark > 0) %>% .[[1]]
   event_lines_time <- x %>% dplyr::filter(Mark > 0) %>% .$"Time"
 
-  x_zoo <- zoo(x[, 2:(ncol(x) - 5)])
+  x_zoo <- zoo(x[, 2:(ncol(x) - 5)]) # TODO remove hardcoding - add CH
+
+  # helper function for plotting zoo ablines
+  my.panel <- function(y, ...) {
+    lines(y, ...)
+    abline(v = event_lines, col = "red")
+  }
 
   if (type == "facets") {
-    my.panel <- function(y, ...) {
-      lines(y, ...)
-      abline(v = event_lines, col = "red")
-    }
-
     plot.zoo(x_zoo, ylim = c(min(x_zoo), max(x_zoo)),
              xlab = "Samples", main = "All channels", panel = my.panel)
   }
@@ -52,9 +54,16 @@ plot_ETG4000 <- function(x, type = "facets", channel = NULL) {
          xlab = "Samples", ylab = "Intensity", main = "All channels")
     abline(v = event_lines, col = "red")
   }
+  if (type == "epochs_averaged") {
+    x_zoo <- zoo(x[, 1:(ncol(x) - 1)])
+    event_lines <- which(x$Mark != 0)
+    plot.zoo(x_zoo, ylim = c(min(x_zoo), max(x_zoo)),
+             xlab = "Samples", main = "All channels (averaged epochs)",
+             panel = my.panel)
+  }
   if (type == "separate") {
     if (missing(channel)) {
-      stop("Channel number to plot is missing.")
+      stop("Channel number is missing.")
     } else {
       channel = paste0("CH", channel)
       plot(x$Time, x[[channel]], type = "l",

@@ -1,4 +1,4 @@
-#' Epoch the ETG-4000 data
+#' Average the epoched ETG-4000 data
 #'
 #' @import dplyr
 #'
@@ -28,7 +28,7 @@ epoch_ETG4000_average <- function(x, start_epoch, end_epoch) {
   x %>%
     select(starts_with("CH"), Mark, EpochSample) %>%
     group_by(EpochSample) %>%
-    summarise_each(funs(mean), 1:channels_number) %>%
+    summarise_each(funs(mean), 1:channels_number) %>% # TODO use summarise_all
     select(-EpochSample) %>% # TODO add Time
     return()
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/epoch_ETG4000_average.R
 \name{epoch_ETG4000_average}
 \alias{epoch_ETG4000_average}
-\title{Epoch the ETG-4000 data}
+\title{Average the epoched ETG-4000 data}
 \usage{
 epoch_ETG4000_average(x, start_epoch, end_epoch)
 }
@@ -17,7 +17,7 @@ epoch_ETG4000_average(x, start_epoch, end_epoch)
 A data frame.
 }
 \description{
-Epoch the ETG-4000 data
+Average the epoched ETG-4000 data
 }
 \examples{
 file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")

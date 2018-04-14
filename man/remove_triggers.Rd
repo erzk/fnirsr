@@ -4,23 +4,30 @@
 \alias{remove_triggers}
 \title{Remove triggers from the ETG-4000 data}
 \usage{
-remove_triggers(x, trigger = NULL)
+remove_triggers(x, trigger = NULL, n = "every")
 }
 \arguments{
 \item{x}{A data frame with an ETG-4000 data.}
 
 \item{trigger}{An integer representign a trigger/marking to remove.}
+
+\item{n}{A character describing which trigger to remove.
+Allowed options: 'every' (default - removed all triggers) and 'every_other'
+(removes every other trigger - to prepare ETG-4000 data for loading into Homer2).}
 }
 \value{
 A data frame.
 }
 \description{
-Remove triggers from the ETG-4000 data
+Replaces triggers/markings from ETG-4000 files as specified by the users.
+This functions can replace all triggers or every other trigger. The latter
+prepares the data frame to be loaded into Homer2.
 }
 \examples{
 file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
 ETG_header <- load_ETG4000_header(file_path)
 ETG_data <-load_ETG4000_data(file_path, ETG_header)
-ETG_data_cleaned <- remove_triggers(ETG_data, 1)
+remove_triggers(ETG_data, 1)
+remove_triggers(ETG_data, 1, "every_other")
 
 }

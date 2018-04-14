@@ -16,6 +16,7 @@ Depends:
 Imports:
     dplyr (>= 0.5.0),
     graphics (>= 3.3.2),
+    magrittr (>= 1.5),
     R.matlab (>= 3.6.1),
     readr (>= 1.0.0),
     RSEIS (>= 3.7-4),

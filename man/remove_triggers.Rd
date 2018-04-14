@@ -19,9 +19,9 @@ Allowed options: 'every' (default - removed all triggers) and 'every_other'
 A data frame.
 }
 \description{
-Replaces triggers/markings from ETG-4000 files as specified by the users.
+Removes triggers/markings from ETG-4000 files. Triggers are replaced with 0.
 This functions can replace all triggers or every other trigger. The latter
-prepares the data frame to be loaded into Homer2.
+prepares data frames to be loaded into Homer2.
 }
 \examples{
 file_path <- system.file("extdata", "Hitachi_ETG4000_24Ch_Total.csv", package = "fnirsr")
